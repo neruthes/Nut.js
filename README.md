@@ -7,6 +7,7 @@
 ## Usage / Utilisation
 
 Set your own key for encryption in `nut.min.js`.
+
 Configurez votre clé pour crypter dans `nut.min.js`.
 
 ### Encrypting / Cryptage
