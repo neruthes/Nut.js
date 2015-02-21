@@ -38,6 +38,6 @@ Or
 
 This software is released under MIT license.
 
-## Credits
+## Credit(s)
 
-- @alexlur for mental ~~(sexual)~~ support
+- @beretzls for ~~(sexual)~~ mental support
