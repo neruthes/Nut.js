@@ -37,7 +37,3 @@ Or
 ## Copyright
 
 This software is released under MIT license.
-
-## Credit(s)
-
-- @beretzls for ~~(sexual)~~ mental support
