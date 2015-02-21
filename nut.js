@@ -10,24 +10,24 @@
   };
 
   Nut.encrypt = function () {
-  	var incomingMessage = (arguments.length) ? arguments[0] : this;
-  	var encryptedMessage = "";
-  	
-  	for (var i = 0, c=''; c = incomingMessage.charCodeAt(i); i++) {
-  		encryptedMessage += String.fromCharCode(c ^ this.key.charCodeAt(i%this.key.length));
-  	};
-  	return encryptedMessage;
+    var incomingMessage = (arguments.length) ? arguments[0] : this;
+    var encryptedMessage = "";
+    
+    for (var i = 0, c=''; c = incomingMessage.charCodeAt(i); i++) {
+      encryptedMessage += String.fromCharCode(c ^ Nut.key.charCodeAt(i%Nut.key.length));
+    }
+    return encryptedMessage;
   }
 
   Nut.decrypt = function () {
-  	var incomingMessage = (arguments.length) ? arguments[0] : this;
-  	var rawMessage = "";
-  	
-  	for (var i = 0, c=''; c = incomingMessage.charCodeAt(i); i++) {
-  		 rawMessage += String.fromCharCode(Number(c)) ^ this.key.charCodeAt(i%this.key.length));
-  	}
-  	
-  	return rawMessage;
+    var incomingMessage = (arguments.length) ? arguments[0] : this;
+    var rawMessage = "";
+    
+    for (var i = 0; i < incomingMessage.length; i++) {
+      rawMessage += String.fromCharCode(Number(incomingMessage.charCodeAt(i)) ^ Nut.key.charCodeAt(i%Nut.key.length));
+    }
+    
+    return rawMessage;
   }
 
   if (!String.prototype.encrypt && !String.prototype.decrypt) {
