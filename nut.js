@@ -6,7 +6,7 @@
  
 (function (window, undefined){
   var Nut = {
-    key : 'D®[@Gµ#1∆©DsdfiILhiyf8hJKH98fdß∆¢ˆøßs98w'
+    nut_key : 'D®[@Gµ#1∆©DsdfiILhiyf8hJKH98fdß∆¢ˆøßs98w'
   };
 
   Nut.encrypt = function () {
@@ -14,7 +14,7 @@
     var encryptedMessage = "";
     
     for (var i = 0, c=''; c = incomingMessage.charCodeAt(i); i++) {
-      encryptedMessage += String.fromCharCode(c ^ Nut.key.charCodeAt(i%Nut.key.length));
+      encryptedMessage += String.fromCharCode(c ^ this.nut_key.charCodeAt(i%this.nut_key.length));
     }
     return encryptedMessage;
   }
@@ -24,13 +24,14 @@
     var rawMessage = "";
     
     for (var i = 0; i < incomingMessage.length; i++) {
-      rawMessage += String.fromCharCode(Number(incomingMessage.charCodeAt(i)) ^ Nut.key.charCodeAt(i%Nut.key.length));
+      rawMessage += String.fromCharCode(Number(incomingMessage.charCodeAt(i)) ^ this.nut_key.charCodeAt(i%this.nut_key.length));
     }
     
     return rawMessage;
   }
 
-  if (!String.prototype.encrypt && !String.prototype.decrypt) {
+  if (!String.prototype.nut_key && !String.prototype.encrypt && !String.prototype.decrypt) {
+    String.prototype.nut_key = Nut.nut_key;
     String.prototype.encrypt = Nut.encrypt;
     String.prototype.decrypt = Nut.decrypt;
   }
