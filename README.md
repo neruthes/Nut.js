@@ -37,4 +37,5 @@ Or / Ou
 ## Copyright
 
 This software is released under MIT license.
+
 Ce logiciel est distribué sous la licence MIT.
