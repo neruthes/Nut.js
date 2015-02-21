@@ -1,39 +1,38 @@
 # Nut.js
 
 `Nut.js` is a lightweight (and maybe useless) library for encrypting something symmetrically to avoid keyword-based censorship. For this purpose you should decrypt the messages in frontend, so using this may be harmful for SEO.
+`Nut.js` est une petite bibliothèque JavaScript pour crypter vos messages symétriquement pour éviter la censure fondée sur mots-clés. Il faut utiliser cette bibliothèque au côté clients, alors vous pouvez profiter d’excepter les moteurs de recherche.
 
-## Use
+## Usage / Utilisation
 
-You should use a different key in line 2.
+Set your own key for encryption in `nut.min.js`.
+Configurez votre clé pour crypter dans `nut.min.js`.
 
-### Encrypting
+### Encrypting / Cryptage
 
 ```javascript
 Nut.encrypt('Some string you want to encrypt');
 ```
 
-Or
+Or / Ou
 
 ```javascript
 'Some string you want to encrypt'.encrypt();
 ```
 
-### Decrypting
+### Decrypting / Décryptage
 
 ```javascript
 Nut.decrypt('Á6%gÆWC≯Ç#S i;  FLj.&ZJ«');
 ```
 
-Or
+Or / Ou
 
 ```javascript
 'Á6%gÆWC≯Ç#S i;  FLj.&ZJ«'.decrypt();
 ```
 
-### Notice
-
-`Nut.js` modifies `String.prototype.encrypt` and `String.prototype.decrypt`. For safety and compatibility purpose, you can remove the last 3 lines if you are not going to use it in the second way.
-
 ## Copyright
 
 This software is released under MIT license.
+Ce logiciel est distribué sous la licence MIT.
