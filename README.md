@@ -40,4 +40,4 @@ This software is released under MIT license.
 
 ## Credits
 
-- @alexlur for mental ~~sexual~~ support
+- @alexlur for mental ~~(sexual)~~ support
