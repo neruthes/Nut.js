@@ -25,7 +25,7 @@
     
     for (var i = 0; i < incomingMessage.length; i++) {
       rawMessage += String.fromCharCode(Number(incomingMessage.charCodeAt(i)) ^ Nut.key.charCodeAt(i%Nut.key.length));
-    };
+    }
     
     return rawMessage;
   }
