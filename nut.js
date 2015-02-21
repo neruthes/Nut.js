@@ -15,7 +15,7 @@
   	
   	for (var i = 0, c=''; c = incomingMessage.charCodeAt(i); i++) {
   		encryptedMessage += String.fromCharCode(c ^ this.key.charCodeAt(i%this.key.length));
-  	};
+  	}
   	return encryptedMessage;
   }
 
@@ -24,8 +24,8 @@
   	var rawMessage = "";
   	
   	for (var i = 0, c=''; c = incomingMessage.charCodeAt(i); i++) {
-  		rawMessage += String.fromCharCode(Number(c)) ^ this.key.charCodeAt(i%this.key.length));
-  	};
+  		rawMessage += String.fromCharCode(Number(c)) ^ this.key.charCodeAt(i%this.key.length);
+  	}
   	
   	return rawMessage;
   }
