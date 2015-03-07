@@ -1,25 +1,15 @@
 /* nut.js
- * Copyright (C) 2015 Alex Cai. <t9cai@uwaterloo.ca>
+ * Copyright (C) 2015 Alex Cai <t9cai@uwaterloo.ca> & Joy Neop <i@joyneop.com>
  * Released under MIT License.
  * Distribuée sous la licence MIT.
  */
  
-(function (window, configKey){
+(function (window, configKey) {
 	var Nut = {
 		nutKey : configKey
 	};
 
-	Nut.encrypt = function () {
-		var incomingMessage = (arguments.length) ? arguments[0] : this;
-		var encryptedMessage = '';
-
-		for (var i = 0, c=''; c = incomingMessage.charCodeAt(i); i++) {
-			encryptedMessage += String.fromCharCode(c ^ Nut.nutKey.charCodeAt(i%Nut.nutKey.length));
-		}
-		return encryptedMessage;
-	}
-
-	Nut.decrypt = function () {
+	Nut.crypt = function () {
 		var incomingMessage = (arguments.length) ? arguments[0] : this;
 		var rawMessage = '';
 
@@ -29,10 +19,12 @@
 		return rawMessage;
 	}
 
-	if (!String.prototype.encrypt && !String.prototype.decrypt) {
-		String.prototype.encrypt = Nut.encrypt;
-		String.prototype.decrypt = Nut.decrypt;
-	}
+	Nut.encrypt = Nut.crypt;
+	Nut.decrypt = Nut.crypt;
 
-	window.nut = Nut;
+	String.prototype.encrypt = Nut.crypt;
+	String.prototype.decrypt = Nut.crypt;
+	String.prototype.crypt = Nut.crypt;
+
+	window.Nut = Nut;
 })(window, 'D®[@Gµ#1∆©DsdfiILhiyf8hJKH98fdß∆¢ˆøßs98w');
